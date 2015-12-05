@@ -1,25 +1,18 @@
-package hu.schonherz.java.courier.entities;
+package hu.schonherz.java.training.courier.entities;
 
 import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.*;
 
-/**
- * Entity implementation class for Entity: User
- *
- */
 @Entity
 public class User extends BaseEntity implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	private String username;
-
+	private String fullname;
 	private String password;
-
-	@Lob
-	private byte[] image;
 
 	@ManyToMany
 	private List<Role> roles;
@@ -52,12 +45,12 @@ public class User extends BaseEntity implements Serializable {
 		this.roles = roles;
 	}
 
-	public byte[] getImage() {
-		return image;
+	public String getFullname() {
+		return fullname;
 	}
 
-	public void setImage(byte[] image) {
-		this.image = image;
+	public void setFullname(String fullname) {
+		this.fullname = fullname;
 	}
 
 }
